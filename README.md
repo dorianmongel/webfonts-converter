@@ -1,36 +1,74 @@
-# Webfonts Converter
+# Webfonts Converter v0.0.3
 
-## Description
-
-Webfonts Converter is a Python-based tool designed to simplify the process of converting font files to various webfont formats. This application allows users to easily transform font files into formats suitable for web use, including TTF, WOFF, WOFF2.
+Webfonts Converter is a user-friendly desktop application that simplifies the process of converting font files between different web-compatible formats.
 
 ## Features
 
-- Convert font files to multiple webfont formats
-- Support for various input font formats (TTF, WOFF, WOFF2)
-- User-friendly graphical interface
-- Batch conversion capability
-- Cross-platform compatibility (Windows, macOS, Linux)
+- Convert TTF to WOFF and WOFF2
+- Convert WOFF to TTF and WOFF2
+- Automatically generate CSS file for easy web integration
+- Create an HTML preview file to test the converted font
+- Intuitive drag-and-drop interface
+- Bilingual support (English and French)
+- Customizable background image
 
 ## Installation
 
-### Prerequisites
+1. Ensure you have Python 3.6 or higher installed on your system.
+2. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/webfonts-converter.git
+   ```
+3. Navigate to the project directory:
+   ```
+   cd webfonts-converter
+   ```
+4. Install the required dependencies:
+   ```
+   pip install PyQt6 fontTools
+   ```
+
+## Usage
+
+1. Run the script:
+   ```
+   python webfonts_converter.py
+   ```
+2. Drag and drop your font file (TTF or WOFF) onto the application window.
+3. The application will automatically convert the font to other formats.
+4. A CSS file and an HTML preview file will be generated in the same directory as the original font.
+
+## Customization
+
+You can customize the application's background by replacing the `background.png` file in the project directory. The recommended image size is 400x300 pixels.
+
+## System Requirements
 
 - Python 3.6 or higher
-- pip (Python package installer)
+- PyQt6
+- fontTools
 
-### Steps
+## Contributing
 
-1. Clone this repository or download the source code.
-2. Navigate to the project directory in your terminal.
-3. Install the required dependencies:
+Contributions, issues, and feature requests are welcome. Feel free to check the [issues page](https://github.com/dorianmongel/webfonts_converter/issues) if you want to contribute.
 
 
-## Building the Application
+## Changelog
 
-To create a standalone executable:
+### v0.0.3
+- Added HTML preview file generation
+- Improved error handling
+- Updated user interface
 
-1. Ensure you have PyInstaller installed:
-2. Run the following command in the project directory:
+### v0.0.2
+- Added support for WOFF to TTF conversion
+- Implemented bilingual support (English and French)
 
-pyinstaller --name="Convertisseur de Webfonts" --windowed --onefile --icon=icon.icns webfonts_converter.py
+### v0.0.1
+- Initial release
+- Basic TTF to WOFF conversion
+- CSS file generation
+
+## Contact
+
+If you have any questions or feedback, please open an issue on the GitHub repository.
