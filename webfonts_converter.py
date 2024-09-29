@@ -4,6 +4,7 @@ from PyQt6.QtGui import QPixmap, QPalette, QBrush
 from fontTools import ttLib
 import sys
 import locale
+import os
 
 langue = locale.getdefaultlocale()[0]
 
@@ -77,7 +78,9 @@ class MainWindow(QMainWindow):
                     raise ValueError("Format de fichier non pris en charge")
             
             nom_fichier = chemin_fichier.split('/')[-1].split('.')[0]
-            chemin_css = '/'.join(chemin_fichier.split('/')[:-1]) + '/font.css'
+            chemin_dossier = '/'.join(chemin_fichier.split('/')[:-1])
+            chemin_css = os.path.join(chemin_dossier, 'font.css')
+            chemin_html = os.path.join(chemin_dossier, 'font.html')
             
             with open(chemin_css, 'w') as f:
                 f.write(f"""@font-face {{
@@ -89,10 +92,33 @@ class MainWindow(QMainWindow):
                     font-style: normal;
                 }}""")
             
+            with open(chemin_html, 'w') as f:
+                f.write(f"""<!DOCTYPE html>
+                    <html lang="fr">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Test de la police {nom_fichier}</title>
+                        <link rel="stylesheet" href="font.css">
+                        <style>
+                            body {{
+                                font-family: '{nom_fichier}', sans-serif;
+                                font-size: 18px;
+                                line-height: 1.6;
+                            }}
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Test de la police {nom_fichier}</h1>
+                        <p>Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l'alcôve ovoïde, où les bûches se consument dans l'âtre, ce qui lui permet de penser à la cænogenèse de l'être dont il est question dans la cause ambiguë entendue à Moÿ, dans un capharnaüm qui, pense-t-il, diminue çà et là la qualité de son œuvre.</p>
+                        <p>The quick brown fox jumps over the lazy dog.</p>
+                    </body>
+                    </html>""")
+            
             if langue.startswith('en'):
-                message += f"\nCSS file generated"
+                message += f"\nCSS and HTML files generated"
             else:
-                message += f"\nFichier CSS généré"
+                message += f"\nFichiers CSS et HTML générés"
             self.label.setText(message)
             
             if self.bouton_reinitialiser is None:
