@@ -4,13 +4,12 @@ Webfonts Converter is a user-friendly desktop application that simplifies the pr
 
 ## Features
 
-- Convert TTF to WOFF and WOFF2
+- Convert TTF AND OTF to WOFF and WOFF2
 - Convert WOFF to TTF and WOFF2
 - Automatically generate CSS file for easy web integration
 - Create an HTML preview file to test the converted font
 - Intuitive drag-and-drop interface
 - Bilingual support (English and French)
-- Customizable background image
 
 ## Installation
 
@@ -38,9 +37,6 @@ Webfonts Converter is a user-friendly desktop application that simplifies the pr
 3. The application will automatically convert the font to other formats.
 4. A CSS file and an HTML preview file will be generated in the same directory as the original font.
 
-## Customization
-
-You can customize the application's background by replacing the `background.png` file in the project directory. The recommended image size is 400x300 pixels.
 
 ## System Requirements
 
@@ -54,6 +50,15 @@ Contributions, issues, and feature requests are welcome. Feel free to check the 
 
 
 ## Changelog
+
+## v0.0.4
+- Added HTML preview file generation
+- Improved error handling
+- Updated user interface
+- Added support for OTF files
+- Added a button to remove files from the list
+- Improved interface design
+- Processing of multiple fonts in a single export
 
 ### v0.0.3
 - Added HTML preview file generation
