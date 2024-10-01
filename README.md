@@ -51,6 +51,10 @@ Contributions, issues, and feature requests are welcome. Feel free to check the 
 
 ## Changelog
 
+## v0.0.5
+- Added background
+- Added css styles (swap, unicode-range, font-variant, font-feature-settings, font-variation-settings)
+
 ## v0.0.4
 - Added HTML preview file generation
 - Improved error handling
