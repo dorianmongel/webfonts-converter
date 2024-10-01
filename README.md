@@ -11,7 +11,6 @@ Webfonts Converter is a user-friendly desktop application that simplifies the pr
 - Automatically generate CSS file for easy web integration
 - Create an HTML preview file to test the converted font
 - Intuitive drag-and-drop interface
-- Bilingual support (English and French)
 
 ## Installation
 

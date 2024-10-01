@@ -13,7 +13,8 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Convertisseur de Webfonts")
         self.setGeometry(100, 100, 400, 400)
 
-        self.background = QPixmap("background.png")
+        background_path = self.resource_path("background.png")
+        self.background = QPixmap(background_path)
         
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
@@ -48,6 +49,15 @@ class MainWindow(QMainWindow):
         self.layout.addLayout(boutons_layout)
 
         self.setAcceptDrops(True)
+
+    def resource_path(self, relative_path):
+        """ Get absolute path to resource, works for dev and for PyInstaller """
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, relative_path)
 
     def paintEvent(self, event):
         painter = QPainter(self)
