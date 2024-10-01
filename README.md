@@ -1,4 +1,6 @@
-# Webfonts Converter v0.0.3
+# Webfonts Converter for Mac (Apple Silicon)
+
+![Webfonts Converter](https://raw.githubusercontent.com/dorianmongel/assets/main/webfont_converter_title.png)
 
 Webfonts Converter is a user-friendly desktop application that simplifies the process of converting font files between different web-compatible formats.
 
